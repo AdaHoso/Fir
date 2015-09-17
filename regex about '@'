@@ -1,0 +1,13 @@
+@Test
+public void sshen(){
+
+    String s = "@([0-9a-zA-Z\u4e00-\u9fa5_-]+)";
+    String testStr = "@呵呵，关于此事@嘻嘻，否则@哈哈 水水水水@嘿嘿@哼哼？";
+
+    Pattern pattern = Pattern.compile(s);
+    Matcher matcher = pattern.matcher(testStr);
+    while (matcher.find()) {
+        System.out.println(matcher.group(1));
+    }
+}
+
